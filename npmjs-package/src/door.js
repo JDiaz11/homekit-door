@@ -110,6 +110,11 @@ accessory.on(AccessoryEventTypes.IDENTIFY, (paired, callback) => {
 accessory.addService(doorbellService);
 accessory.addService(lockService);
 
+// pseudo-services
+accessory.addService(Service.CameraRTPStreamManagement, "Pseudo-Camera");
+accessory.addService(Service.Speaker, "Pseudo-Speaker");
+accessory.addService(Service.Microphone, "Pseudo-Microphone");
+
 accessory.getService(Service.AccessoryInformation)
     .setCharacteristic(Characteristic.Manufacturer, "Raspberry Pi")
     .setCharacteristic(Characteristic.Model, "Zero W")
